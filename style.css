@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@0,300;0,400;0,800;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+  font-family: 'Barlow', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  /* color: rgba(0, 0, 0, .16); */
+  margin: 1rem;
+}
+
+img {
+  max-width: 21ch;
+  margin-left: 2ch;
+  margin-top: 1ex;
+  float: right;
+  clip-path: ellipse(45% 45% at 50% 50%);
+  shape-outside: ellipse(45% 45% at 50% 50%);
+}
+
+
+h1 { 
+  font-weight: 800;
+  /* text-shadow: 1px 2px 3px #F7AA00; */
+  font-family: 'Rochester', cursive;
+  font-size: 2.5rem;
+  text-align: center;
+}
+h1 small {
+  font-family: 'Barlow', Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+}
+
+h2 { 
+  font-weight: 300; 
+  font-style: italic;
+}
+
+p {
+  line-height: 1.75;
+  text-align: justify;
+}
+/* p:nth-of-type(3) { text-align: right; }
+p:nth-of-type(2) { text-align: justify; } */
+
+p:first-of-type::first-letter {
+  color: #F7AA00;
+  display: block;
+  float: left;
+  font-family: 'Rochester', cursive;
+  font-size: 400%;
+  margin-bottom: -1rem;
+  margin-right: .25rem;
+}
+p:first-of-type::first-line {
+  color: #F7AA00;
+  font-weight: 400;
+}
+p:not(:first-of-type) {
+  text-indent: 2rem;
+}
+
+a { 
+  text-decoration: underline;
+  text-underline-position: under;
+  color: #469EA4;
+  text-decoration-style: dotted;
+}
+
+section, .actions {
+  margin: 0 auto;
+  max-width: 54ch;
+}
+
+.actions {
+  max-width: 54ch;
+  margin: 2rem auto;
+  text-align: right;
+}
+.actions span:first-of-type {
+  letter-spacing: .5ch;
+  font-family: 'Barlow', Helvetica, Arial, sans-serif;
+}
+.actions span:last-of-type {
+  font-family: 'Rochester', cursive;
+  font-size: 1.25rem;
+}
+
+@media print {
+  .actions { display: none; }
+  section {
+    max-width: initial;
+    margin: 0 auto;
+    /* max-width: 54ch; */
+    column-count: 2;
+    column-gap: 2rem;
+  }
+}
+
+/* .decoration-none { text-decoration-line: none;}
+.overline { text-decoration-line: overline;}
+.line-through { text-decoration-line: line-through;}
+.underline { text-decoration-line: underline; }
+.text-decoration-line-all { text-decoration-line: underline overline line-through; } */
+
+/* .double { text-decoration-style: double; }
+.dotted { text-decoration-style: dotted; }
+.dashed { text-decoration-style: dashed; }
+.wavy { text-decoration-style: wavy; } */
+
+/* .under { text-underline-position: under; } */
+
+.table-of-contents {
+  counter-reset: contents;
+  font-family: 'Raleway';
+  padding: 0;
+}
+.table-of-contents li {
+  list-style-type: none;
+  margin: 1rem;
+  text-transform: capitalize;
+}
+.table-of-contents li::before {
+  counter-increment: contents;
+  content: "Chapter " counter(contents) " : ";
+  font-size: .875rem;
+  /* font-variant: lining-nums small-caps; */
+}
