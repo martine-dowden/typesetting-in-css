@@ -68,7 +68,7 @@ a {
   text-decoration-style: dotted;
 }
 
-section, .actions {
+section, .actions, .pages, .chapter {
   margin: 0 auto;
   max-width: 54ch;
 }
@@ -126,4 +126,8 @@ section, .actions {
   content: "Chapter " counter(contents) " : ";
   font-size: .875rem;
   /* font-variant: lining-nums small-caps; */
+}
+
+.table-of-contents.demo li::before {
+  content: "Sample " counter(contents) " : ";
 }
